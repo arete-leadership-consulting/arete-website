@@ -15,7 +15,7 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="ARETE home">
-          <span className="brand-mark" aria-hidden="true"><Image src="/brand/arete-original.png" alt="" width={1000} height={1000} priority /></span>
+          <span className="brand-mark" aria-hidden="true"><Image src="/brand/arete-lead-transparent.png" alt="" width={2000} height={2000} priority /></span>
           <span><strong>ARETE</strong><small>Leadership &amp; Business Consulting</small></span>
         </a>
         <nav aria-label="Primary navigation"><a href="#about">About</a><a href="#consulting">Consulting</a><a href="#speaking">Speaking</a><a href="#insights">Insights</a></nav>
