@@ -27,11 +27,10 @@ export default function Home() {
         <div className="hero-stage">
           <Image className="hero-image" src="/brand/luis-yu-hero.png" alt="Luis Yu speaking onstage" fill sizes="100vw" priority />
           <div className="hero-copy">
-            <p className="eyebrow light">Leadership · Service · Strategy</p>
             <h1>
-              <span className="hero-line"><small>Lead</small><strong>better.</strong></span>
-              <span className="hero-line"><small>Build</small><strong>stronger.</strong></span>
-              <span className="hero-line"><small>Grow</small><strong>further.</strong></span>
+              <span className="hero-line"><strong>Lead</strong><small> better.</small></span>
+              <span className="hero-line"><strong>Build</strong><small> stronger.</small></span>
+              <span className="hero-line"><strong>Grow</strong><small> further.</small></span>
             </h1>
             <p className="hero-intro">Leadership and business consulting for people ready to move forward.</p>
             <div className="button-row"><a className="button button-primary" href="#contact">Work with ARETE <span>↗</span></a><a className="button button-quiet" href="#speaking">Book Luis to speak <span>↗</span></a></div>
