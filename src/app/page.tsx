@@ -51,7 +51,12 @@ export default function Home() {
       </section>
 
       <section className="founder section">
-        <div className="founder-panel"><p className="eyebrow light">Founder &amp; principal consultant</p><div className="founder-monogram" aria-hidden="true">LY</div><p className="founder-caption">Experience across business, creative, organizational, and community leadership.</p></div>
+        <div className="founder-panel">
+          <Image className="founder-image" src="/brand/luis-yu-office-portrait.png" alt="Luis Yu in his office" fill sizes="(max-width: 720px) 100vw, 50vw" />
+          <div className="founder-image-shade" aria-hidden="true" />
+          <p className="eyebrow light">Founder &amp; principal consultant</p>
+          <p className="founder-caption">Experience across business, creative, organizational, and community leadership.</p>
+        </div>
         <div className="founder-copy"><p className="section-number">03</p><h2>Meet<br /><em>Luis Yu.</em></h2><p className="founder-lead">Entrepreneur, business leader, creative strategist, organizational leader, consultant, and speaker.</p><p>His work spans frontline customer service, management, entrepreneurship, executive leadership, creative leadership, organizational development, and community building.</p><a className="text-link" href="#contact">Start a conversation <span>↗</span></a></div>
       </section>
 
