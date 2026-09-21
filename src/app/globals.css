@@ -187,8 +187,8 @@ footer { padding:50px clamp(22px,7vw,132px); display:grid; grid-template-columns
 .hero h1 { display:grid; gap:3px; max-width:760px; margin:0 0 30px; font-family:Arial,Helvetica,sans-serif; font-size:inherit; line-height:.94; letter-spacing:-.06em; }
 .hero-line { display:block; width:max-content; max-width:100%; white-space:nowrap; }
 .hero-line small,.hero-line strong { font-size:clamp(3.15rem,5.6vw,6.4rem); }
-.hero-line small { color:var(--on-dark-soft); font-weight:400; letter-spacing:-.06em; }
-.hero-line strong { color:var(--on-dark-strong); font-weight:800; }
+.hero-line small { color:var(--on-dark-soft); font-weight:500; letter-spacing:-.055em; }
+.hero-line strong { color:var(--on-dark-strong); font-weight:700; letter-spacing:-.055em; }
 .hero-intro { max-width:610px; font-size:clamp(1rem,1.3vw,1.2rem); }
 .hero .button { min-height:56px; padding-inline:27px; border-radius:999px; }
 .hero .button-primary { color:#111; background:white; }
