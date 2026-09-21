@@ -88,7 +88,7 @@ export default function Home() {
         <form className="contact-form" aria-describedby="form-status"><label>Name<input type="text" name="name" autoComplete="name" /></label><label>Work email<input type="email" name="email" autoComplete="email" /></label><label>Organization<input type="text" name="organization" autoComplete="organization" /></label><label>What would you like to work on?<textarea name="message" rows={4} /></label><button type="button" disabled>Start a conversation <span>↗</span></button><p id="form-status">Inquiry delivery is being configured for the client-owned mailbox.</p></form>
       </section>
 
-      <footer><div className="footer-brand"><strong>ARETE</strong><span>Leadership · Service · Strategy</span></div><div><p>Leadership &amp; Business Consulting</p><p>Mindanao, Philippines</p></div><div className="footer-links"><a href="#top">Back to top ↑</a><span>© 2026 ARETE</span></div></footer>
+      <footer><div className="footer-brand"><Image className="footer-logo" src="/brand/arete-lead-transparent.png" alt="ARETE Lead" width={2000} height={2000} /></div><div><p>Leadership &amp; Business Consulting</p><p>Mindanao, Philippines</p></div><div className="footer-links"><a href="#top">Back to top ↑</a><span>© 2026 ARETE</span></div></footer>
     </main>
   );
 }
