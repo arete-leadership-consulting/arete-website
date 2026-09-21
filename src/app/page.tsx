@@ -25,15 +25,15 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="hero-grid" aria-hidden="true" />
         <div className="hero-stage">
-          <Image className="hero-image" src="/brand/luis-yu-hero.png" alt="Luis Yu seated at a desk in an office" fill sizes="100vw" priority />
+          <Image className="hero-image" src="/brand/luis-yu-hero.png" alt="Luis Yu speaking onstage" fill sizes="100vw" priority />
           <div className="hero-copy">
             <p className="eyebrow light">Leadership · Service · Strategy</p>
             <h1>
-              <span className="hero-line"><small>Build better</small><strong>leaders.</strong></span>
-              <span className="hero-line"><small>Create stronger</small><strong>teams.</strong></span>
-              <span className="hero-line"><small>Grow better</small><strong>businesses.</strong></span>
+              <span className="hero-line"><small>Lead</small><strong>better.</strong></span>
+              <span className="hero-line"><small>Build</small><strong>stronger.</strong></span>
+              <span className="hero-line"><small>Grow</small><strong>further.</strong></span>
             </h1>
-            <p className="hero-intro">Practical leadership development, customer experience, and business strategy for people and organizations ready to move forward.</p>
+            <p className="hero-intro">Leadership and business consulting for people ready to move forward.</p>
             <div className="button-row"><a className="button button-primary" href="#contact">Work with ARETE <span>↗</span></a><a className="button button-quiet" href="#speaking">Book Luis to speak <span>↗</span></a></div>
           </div>
           <div className="portrait-tag"><span>Founder &amp; principal consultant</span><strong>Luis Yu</strong></div>
