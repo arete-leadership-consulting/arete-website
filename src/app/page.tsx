@@ -14,9 +14,9 @@ const services = [
 const statistics = [["20+", "Years of leadership experience"], ["500+", "People led"], ["60,000+", "Clients served"], ["2.4M+", "Creative assets delivered"]];
 const talks = ["Leadership Beyond the Title", "The Culture of Excellence", "Customer Service is Everyone’s Business", "Leading Through Change", "Human Leadership in the Age of AI", "From Vision to Execution"];
 const insights = [
-  { category: "Leadership", title: "Why clarity is one of a leader’s most generous acts", slug: "clarity-in-leadership" },
-  { category: "Customer experience", title: "Service culture is built long before the customer arrives", slug: "building-service-culture" },
-  { category: "Future of work", title: "Human leadership in an age of intelligent tools", slug: "human-leadership-ai" },
+  { category: "Leadership", title: "Why clarity is one of a leader’s most generous acts", slug: "clarity-in-leadership", image: "/brand/insights/leadership-clarity.png", alt: "Business leader reviewing a strategic plan" },
+  { category: "Customer experience", title: "Service culture is built long before the customer arrives", slug: "building-service-culture", image: "/brand/insights/service-culture.png", alt: "Service team preparing together before opening" },
+  { category: "Future of work", title: "Human leadership in an age of intelligent tools", slug: "human-leadership-ai", image: "/brand/insights/human-leadership-ai.png", alt: "Two leaders discussing work alongside intelligent technology" },
 ];
 
 export default function Home() {
@@ -93,7 +93,7 @@ export default function Home() {
 
       <section className="insights section" id="insights">
         <div className="section-heading"><div><p className="eyebrow">ARETE Insights</p><p className="section-number">07</p></div><h2>Thinking for the<br /><em>work ahead.</em></h2><p>Notes on leadership, service, culture, business, and the future of work.</p></div>
-        <div className="insight-grid">{insights.map((insight, index) => <article key={insight.slug}><div className={`insight-art art-${index + 1}`}><span>0{index + 1}</span></div><p>{insight.category}</p><h3>{insight.title}</h3><Link className="read-more" href={`/insights/${insight.slug}`}>Read insight <span>↗</span></Link></article>)}</div>
+        <div className="insight-grid">{insights.map((insight, index) => <article key={insight.slug}><div className="insight-art"><Image src={insight.image} alt={insight.alt} fill sizes="(max-width: 900px) 100vw, 33vw" /><span>0{index + 1}</span></div><p>{insight.category}</p><h3>{insight.title}</h3><Link className="read-more" href={`/insights/${insight.slug}`}>Read insight <span>↗</span></Link></article>)}</div>
       </section>
 
       <section className="contact section" id="contact">
