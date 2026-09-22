@@ -4,7 +4,7 @@ import { FormEvent, useRef, useState } from "react";
 
 type Status = { tone: "idle" | "success" | "error"; message: string };
 
-export function ContactForm() {
+export function ContactForm({ defaultMessage = "" }: { defaultMessage?: string }) {
   const formRef = useRef<HTMLFormElement>(null);
   const [startedAt] = useState(() => Date.now());
   const [pending, setPending] = useState(false);
@@ -29,7 +29,7 @@ export function ContactForm() {
       if (!response.ok) throw new Error(result.message || "We couldn’t send your inquiry.");
 
       formRef.current?.reset();
-      setStatus({ tone: "success", message: "Thank you. Your inquiry is on its way, and a confirmation has been sent to your inbox." });
+      setStatus({ tone: "success", message: "Thank you. Your message has been received. We’ll review what you shared and respond within two business days." });
     } catch (error) {
       setStatus({ tone: "error", message: error instanceof Error ? error.message : "We couldn’t send your inquiry. Please try again." });
     } finally {
@@ -42,7 +42,7 @@ export function ContactForm() {
       <label>Name<input type="text" name="name" autoComplete="name" maxLength={100} required /></label>
       <label>Work email<input type="email" name="email" autoComplete="email" maxLength={254} required /></label>
       <label>Organization<input type="text" name="organization" autoComplete="organization" maxLength={140} required /></label>
-      <label>What would you like to work on?<textarea name="message" rows={4} maxLength={3000} required /></label>
+      <label>What would you like to work on?<textarea name="message" rows={4} maxLength={3000} defaultValue={defaultMessage} required /></label>
       <label className="form-trap" aria-hidden="true">Website<input type="text" name="website" tabIndex={-1} autoComplete="off" /></label>
       <button type="submit" disabled={pending}>{pending ? "Sending…" : "Start a conversation"} <span>↗</span></button>
       <p id="form-status" className={`form-status form-status-${status.tone}`} aria-live="polite">{status.message}</p>

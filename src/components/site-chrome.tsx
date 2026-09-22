@@ -48,13 +48,18 @@ export function PageShell({ children }: { children: ReactNode }) {
   return <main><SiteHeader />{children}<SiteFooter /></main>;
 }
 
-export function ClosingCta({ heading = "Better organizations don’t happen by accident." }: { heading?: string }) {
+export function ClosingCta({
+  heading = "Better organizations don’t happen by accident.",
+  description = "They are built deliberately—through better leadership, better service, better systems, and better decisions.",
+  href = "/work-with-arete",
+  label = "Start a conversation",
+}: { heading?: string; description?: string; href?: string; label?: string }) {
   return (
     <section className="closing-cta section">
       <p className="eyebrow light">Work with ARETE</p>
       <h2>{heading}</h2>
-      <p>They are built deliberately—through better leadership, better service, better systems, and better decisions.</p>
-      <Link className="button button-primary" href="/work-with-arete">Start a conversation <span>↗</span></Link>
+      <p>{description}</p>
+      <Link className="button button-primary" href={href}>{label} <span>↗</span></Link>
     </section>
   );
 }

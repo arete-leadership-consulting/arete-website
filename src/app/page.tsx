@@ -10,7 +10,11 @@ const services = [
 
 const statistics = [["20+", "Years of leadership experience"], ["500+", "People led"], ["60,000+", "Clients served"], ["2.4M+", "Creative assets delivered"]];
 const talks = ["Leadership Beyond the Title", "The Culture of Excellence", "Customer Service is Everyone’s Business", "Leading Through Change", "Human Leadership in the Age of AI", "From Vision to Execution"];
-const insights = [["Leadership", "Why clarity is one of a leader’s most generous acts"], ["Customer experience", "Service culture is built long before the customer arrives"], ["Future of work", "Human leadership in an age of intelligent tools"]];
+const insights = [
+  { category: "Leadership", title: "Why clarity is one of a leader’s most generous acts", slug: "clarity-in-leadership" },
+  { category: "Customer experience", title: "Service culture is built long before the customer arrives", slug: "building-service-culture" },
+  { category: "Future of work", title: "Human leadership in an age of intelligent tools", slug: "human-leadership-ai" },
+];
 
 export default function Home() {
   return (
@@ -86,7 +90,7 @@ export default function Home() {
 
       <section className="insights section" id="insights">
         <div className="section-heading"><div><p className="eyebrow">ARETE Insights</p><p className="section-number">07</p></div><h2>Thinking for the<br /><em>work ahead.</em></h2><p>Notes on leadership, service, culture, business, and the future of work.</p></div>
-        <div className="insight-grid">{insights.map(([category, title], index) => <article key={title}><div className={`insight-art art-${index + 1}`}><span>0{index + 1}</span></div><p>{category}</p><h3>{title}</h3><span className="read-more">Coming soon</span></article>)}</div>
+        <div className="insight-grid">{insights.map((insight, index) => <article key={insight.slug}><div className={`insight-art art-${index + 1}`}><span>0{index + 1}</span></div><p>{insight.category}</p><h3>{insight.title}</h3><Link className="read-more" href={`/insights/${insight.slug}`}>Read insight <span>↗</span></Link></article>)}</div>
       </section>
 
       <section className="contact section" id="contact">

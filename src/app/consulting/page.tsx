@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ClosingCta, PageHero, PageShell } from "@/components/site-chrome";
 
 export const metadata: Metadata = { title: "Consulting", description: "Leadership, customer experience, strategy, and organizational improvement consulting from ARETE." };
@@ -10,11 +11,11 @@ const disciplines = [
 ];
 const method = [["Discover", "Listen to the organization, its people, goals, customers, challenges, and current reality."], ["Diagnose", "Identify what is really preventing progress—not only the most visible problem."], ["Design", "Build a practical approach around the organization’s actual situation, not a generic template."], ["Develop", "Strengthen capability through consulting, workshops, coaching, systems, and practical tools."], ["Deliver", "Translate recommendations into clear priorities, responsibilities, systems, and next steps."]];
 const engagements = [
-  { number: "01", mode: "Focused", title: "Strategy session", copy: "Focused clarity around a challenge, decision, opportunity, or direction." },
-  { number: "02", mode: "Diagnostic", title: "Organizational diagnostic", copy: "A deeper examination of leadership, customer experience, culture, operations, or systems." },
-  { number: "03", mode: "Facilitated", title: "Workshop + action plan", copy: "A facilitated working session where teams learn, decide, and leave with specific actions." },
-  { number: "04", mode: "Embedded", title: "Consulting engagement", copy: "A longer partnership through a larger leadership, service, strategy, or transformation challenge." },
-  { number: "05", mode: "Tailored", title: "Custom engagement", copy: "A scope designed around a challenge that does not fit neatly inside a package." },
+  { number: "01", mode: "Focused", title: "Strategy session", copy: "Focused clarity around a challenge, decision, opportunity, or direction.", cta: "Explore a strategy session" },
+  { number: "02", mode: "Diagnostic", title: "Organizational diagnostic", copy: "A deeper examination of leadership, customer experience, culture, operations, or systems.", cta: "Discuss a diagnostic" },
+  { number: "03", mode: "Facilitated", title: "Workshop + action plan", copy: "A facilitated working session where teams learn, decide, and leave with specific actions.", cta: "Plan a workshop" },
+  { number: "04", mode: "Embedded", title: "Consulting engagement", copy: "A longer partnership through a larger leadership, service, strategy, or transformation challenge.", cta: "Discuss an engagement" },
+  { number: "05", mode: "Tailored", title: "Custom engagement", copy: "A scope designed around a challenge that does not fit neatly inside a package.", cta: "Shape a custom engagement" },
 ];
 
 export default function ConsultingPage() { return <PageShell>
@@ -22,6 +23,6 @@ export default function ConsultingPage() { return <PageShell>
   <section className="challenge section"><div><p className="eyebrow">The challenge</p><p className="section-number">01</p></div><div className="long-copy"><h2>Growth exposes what was once manageable.</h2><div className="challenge-list"><p>Communication becomes inconsistent.</p><p>Leaders become overwhelmed.</p><p>Teams operate in silos.</p><p>Customer experience varies.</p><p>Processes depend too much on individuals.</p><p>Everyone becomes busy—but the organization does not necessarily move forward.</p></div></div></section>
   <section className="consulting-disciplines section"><div className="section-heading"><div><p className="eyebrow">How ARETE helps</p><p className="section-number">02</p></div><h2>Three disciplines. <em>One standard.</em></h2><p>Practical support where leadership, service, and strategy meet.</p></div><div className="discipline-stack">{disciplines.map((item) => <article key={item.name}><div className="discipline-label"><span>{item.number}</span><strong>{item.name}</strong></div><div><h3>{item.title}</h3><p>{item.copy}</p></div><ul>{item.items.map((line) => <li key={line}>{line}</li>)}</ul></article>)}</div></section>
   <section className="method section"><div className="method-heading"><p className="eyebrow light">The ARETE method</p><p className="section-number">03</p><h2>Discover. Diagnose. Design. Develop. Deliver.</h2></div><div className="method-list">{method.map(([title, copy], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{copy}</p></article>)}</div></section>
-  <section className="engagements section"><div className="section-heading"><div><p className="eyebrow">Ways to work together</p><p className="section-number">04</p></div><h2>Different problems require different levels of involvement.</h2><p>Every engagement is grounded in your organization’s reality.</p></div><div className="engagement-grid">{engagements.map((engagement) => <article key={engagement.title}><div className="engagement-meta"><span>{engagement.number}</span><em>{engagement.mode}</em></div><div className="engagement-copy"><h3>{engagement.title}</h3><p>{engagement.copy}</p></div><span className="engagement-arrow" aria-hidden="true">↗</span></article>)}</div></section>
-  <ClosingCta heading="Clarity is the beginning of movement." />
+  <section className="engagements section"><div className="section-heading"><div><p className="eyebrow">Ways to work together</p><p className="section-number">04</p></div><h2>Different problems require different levels of involvement.</h2><p>Every engagement is grounded in your organization’s reality.</p></div><div className="engagement-grid">{engagements.map((engagement) => <article key={engagement.title}><div className="engagement-meta"><span>{engagement.number}</span><em>{engagement.mode}</em></div><div className="engagement-copy"><h3>{engagement.title}</h3><p>{engagement.copy}</p><Link className="engagement-link" href={`/work-with-arete?engagement=${encodeURIComponent(engagement.title)}`}>{engagement.cta} <span>↗</span></Link></div></article>)}</div></section>
+  <ClosingCta heading="Clarity is the beginning of movement." description="Bring us the challenge. We’ll help you understand what matters, identify what is getting in the way, and build a practical way forward." href="/work-with-arete?area=Business%20consulting" />
  </PageShell>; }
