@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ContactForm } from "@/components/contact-form";
 
 const services = [
   { number: "01", label: "Lead", title: "Leadership & organizational development", description: "Build leaders who communicate clearly, align teams, shape culture, and lead through change with confidence.", topics: ["Leadership development", "Team alignment", "Culture & communication"] },
@@ -17,8 +19,8 @@ export default function Home() {
         <a className="brand" href="#top" aria-label="ARETE home">
           <Image className="brand-logo" src="/brand/arete-lead-logo-white.png" alt="" width={572} height={286} preload unoptimized />
         </a>
-        <nav aria-label="Primary navigation"><a href="#about">About</a><a href="#consulting">Consulting</a><a href="#speaking">Speaking</a><a href="#insights">Insights</a></nav>
-        <a className="header-cta" href="#contact">Work with ARETE <span>↗</span></a>
+        <nav aria-label="Primary navigation"><Link href="/about">About</Link><Link href="/consulting">Consulting</Link><Link href="/speaking">Speaking</Link><Link href="/insights">Insights</Link></nav>
+        <Link className="header-cta" href="/work-with-arete">Work with ARETE <span>↗</span></Link>
       </header>
 
       <section className="hero" id="top">
@@ -32,7 +34,7 @@ export default function Home() {
               <span className="hero-line"><strong>Grow</strong><small> further.</small></span>
             </h1>
             <p className="hero-intro">Leadership and business consulting for people ready to move forward.</p>
-            <div className="button-row"><a className="button button-primary" href="#contact">Work with ARETE <span>↗</span></a><a className="button button-quiet" href="#speaking">Book Luis to speak <span>↗</span></a></div>
+            <div className="button-row"><Link className="button button-primary" href="/work-with-arete">Work with ARETE <span>↗</span></Link><Link className="button button-quiet" href="/speaking">Book Luis to speak <span>↗</span></Link></div>
           </div>
           <div className="portrait-tag"><span>Founder &amp; principal consultant</span><strong>Luis Yu</strong></div>
         </div>
@@ -56,13 +58,13 @@ export default function Home() {
           <p className="eyebrow light">Founder &amp; principal consultant</p>
           <p className="founder-caption">Experience across business, creative, organizational, and community leadership.</p>
         </div>
-        <div className="founder-copy"><p className="section-number">03</p><h2>Meet<br /><em>Luis Yu.</em></h2><p className="founder-lead">Entrepreneur, business leader, creative strategist, consultant, and speaker.</p><p>His experience spans frontline service, management, entrepreneurship, executive leadership, organizational development, and community building.</p><a className="text-link" href="#contact">Start a conversation <span>↗</span></a></div>
+        <div className="founder-copy"><p className="section-number">03</p><h2>Meet<br /><em>Luis Yu.</em></h2><p className="founder-lead">Entrepreneur, business leader, creative strategist, consultant, and speaker.</p><p>His experience spans frontline service, management, entrepreneurship, executive leadership, organizational development, and community building.</p><Link className="text-link" href="/about">Meet Luis <span>↗</span></Link></div>
       </section>
 
       <section className="numbers section" aria-label="Experience by the numbers">
         <div className="numbers-intro"><p className="eyebrow light">Experience by the numbers</p><h2>Built in the work.<br /><em>Not in theory.</em></h2></div>
         <div className="stats-grid">{statistics.map(([value, label]) => <div className="stat" key={value}><strong>{value}</strong><span>{label}</span></div>)}</div>
-        <p className="evidence-note">These figures reflect Luis Yu’s leadership and business experience. Client case studies will be added as ARETE’s consulting portfolio develops.</p>
+        <p className="evidence-note">These figures reflect Luis Yu’s leadership and business experience.</p>
       </section>
 
       <section className="consulting section">
@@ -73,7 +75,7 @@ export default function Home() {
       <section className="speaking section" id="speaking">
         <div className="section-heading"><div><p className="eyebrow light">Speaking &amp; training</p><p className="section-number">05</p></div><h2>Ideas that move people.<br /><em>Tools that move work.</em></h2><p>Storytelling grounded in business experience, organizational leadership, and practical frameworks.</p></div>
         <ol className="talk-list">{talks.map((talk, index) => <li key={talk}><span>0{index + 1}</span><p>{talk}</p><b aria-hidden="true">↗</b></li>)}</ol>
-        <a className="button button-primary" href="#contact">Book Luis to speak <span>↗</span></a>
+        <Link className="button button-primary" href="/speaking">Explore speaking topics <span>↗</span></Link>
       </section>
 
       <section className="framework section">
@@ -89,10 +91,10 @@ export default function Home() {
 
       <section className="contact section" id="contact">
         <div className="contact-copy"><p className="eyebrow light">Start a conversation</p><p className="section-number">08</p><h2>What are you trying<br />to <em>build?</em></h2><p>Whether you’re developing leaders, strengthening your team, improving customer experience, or figuring out your organization’s next move—let’s talk.</p></div>
-        <form className="contact-form" aria-describedby="form-status"><fieldset disabled><label>Name<input type="text" name="name" autoComplete="name" /></label><label>Work email<input type="email" name="email" autoComplete="email" /></label><label>Organization<input type="text" name="organization" autoComplete="organization" /></label><label>What would you like to work on?<textarea name="message" rows={4} /></label><button type="button">Start a conversation <span>↗</span></button></fieldset><p id="form-status">Online inquiries are not open yet. ARETE’s client-owned email will be connected before launch.</p></form>
+        <ContactForm />
       </section>
 
-      <footer><div className="footer-brand"><Image className="footer-logo" src="/brand/arete-lead-logo-white.png" alt="ARETÉ Lead" width={572} height={286} unoptimized /></div><div><p>Leadership &amp; Business Consulting</p><p>Mindanao, Philippines</p></div><div className="footer-links"><a href="#top">Back to top ↑</a><span>© 2026 ARETE</span></div></footer>
+      <footer><div className="footer-brand"><Image className="footer-logo" src="/brand/arete-lead-logo-white.png" alt="ARETÉ Lead" width={572} height={286} unoptimized /></div><div><p>Leadership &amp; Business Consulting</p><p>Mindanao, Philippines</p></div><div className="footer-links"><Link href="/work-with-arete">Start a conversation ↗</Link><span>© 2026 ARETE</span></div></footer>
     </main>
   );
 }
