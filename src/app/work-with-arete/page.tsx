@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact-form";
 import { PageHero, PageShell } from "@/components/site-chrome";
 
-export const metadata: Metadata = { title: "Work With ARETE", description: "Start a conversation with ARETE about leadership, service, strategy, speaking, or organizational improvement." };
+export const metadata: Metadata = { title: "Work With ARETE", description: "Start a conversation with ARETE about leadership, service, strategy, speaking, or organizational improvement.", alternates: { canonical: "/work-with-arete" } };
 
 type WorkWithAretePageProps = { searchParams: Promise<{ area?: string; engagement?: string; topic?: string }> };
 

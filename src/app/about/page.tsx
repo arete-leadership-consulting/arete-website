@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { ClosingCta, PageHero, PageShell } from "@/components/site-chrome";
 
-export const metadata: Metadata = { title: "About", description: "Meet Luis Yu and discover the people, purpose, and performance philosophy behind ARETE." };
+export const metadata: Metadata = { title: "About", description: "Meet Luis Yu and discover the people, purpose, and performance philosophy behind ARETE.", alternates: { canonical: "/about" } };
 
 const principles = [
   ["People", "Organizations move through people. We develop leaders and teams who communicate clearly, take ownership, collaborate effectively, and understand the impact of their work."],

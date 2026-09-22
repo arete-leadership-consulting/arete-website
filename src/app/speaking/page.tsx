@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ClosingCta, PageHero, PageShell } from "@/components/site-chrome";
 
-export const metadata: Metadata = { title: "Speaking & Training", description: "Keynotes, workshops, and practical leadership learning experiences with Luis Yu." };
+export const metadata: Metadata = { title: "Speaking & Training", description: "Keynotes, workshops, and practical leadership learning experiences with Luis Yu.", alternates: { canonical: "/speaking" } };
 
 const topics = [
   ["Leadership Beyond the Title", "Leadership begins long before someone receives a position. A practical exploration of influence, responsibility, communication, ownership, and the everyday behaviors that create trust.", "Managers, supervisors, emerging leaders, and leadership teams"],

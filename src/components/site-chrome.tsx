@@ -28,7 +28,7 @@ export function SiteFooter() {
     <footer>
       <div className="footer-brand"><Image className="footer-logo" src="/brand/arete-lead-logo-white.png" alt="ARETÉ Lead" width={572} height={286} unoptimized /></div>
       <div><p>Leadership &amp; Business Consulting</p><p>Mindanao, Philippines</p></div>
-      <div className="footer-links"><Link href="/work-with-arete">Start a conversation ↗</Link><span>© 2026 ARETE</span></div>
+      <div className="footer-links"><Link href="/work-with-arete">Start a conversation ↗</Link><Link href="/privacy">Privacy</Link><span>© 2026 ARETE</span></div>
     </footer>
   );
 }

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { isProductionSite, siteName, siteUrl } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: siteUrl,
   title: {
     default: "ARETE | Leadership & Business Consulting",
     template: "%s | ARETE",
@@ -22,16 +24,24 @@ export const metadata: Metadata = {
       "Leadership. Service. Strategy. Practical support for people, teams, and organizations pursuing excellence.",
     type: "website",
     locale: "en_PH",
-    siteName: "ARETE Leadership & Business Consulting",
+    siteName,
+    url: "/",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "ARETE Leadership & Business Consulting" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ARETE | Build Better Leaders, Teams, and Businesses",
+    description: "Leadership. Service. Strategy. Practical support for people, teams, and organizations pursuing excellence.",
+    images: ["/opengraph-image"],
   },
   robots: {
-    index: false,
-    follow: false,
-    nocache: true,
+    index: isProductionSite,
+    follow: isProductionSite,
+    nocache: !isProductionSite,
     googleBot: {
-      index: false,
-      follow: false,
-      noimageindex: true,
+      index: isProductionSite,
+      follow: isProductionSite,
+      noimageindex: !isProductionSite,
     },
   },
 };

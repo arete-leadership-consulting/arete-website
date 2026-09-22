@@ -6,7 +6,7 @@ import { PageShell } from "@/components/site-chrome";
 import { getInsight, publishedInsights } from "@/lib/insights";
 
 export function generateStaticParams() { return publishedInsights.map(({ slug }) => ({ slug })); }
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> { const { slug } = await params; const insight = getInsight(slug); return insight ? { title: insight.title, description: insight.standfirst, openGraph: { title: insight.title, description: insight.standfirst, type: "article" } } : {}; }
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> { const { slug } = await params; const insight = getInsight(slug); return insight ? { title: insight.title, description: insight.standfirst, alternates: { canonical: `/insights/${slug}` }, openGraph: { title: insight.title, description: insight.standfirst, type: "article", url: `/insights/${slug}`, siteName: "ARETE Leadership & Business Consulting", images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "ARETE Leadership & Business Consulting" }] } } : {}; }
 
 const frameworkBySlug = { "clarity-in-leadership": LeadershipFrameworks, "building-service-culture": ServiceFrameworks, "human-leadership-ai": FutureFrameworks } as const;
 

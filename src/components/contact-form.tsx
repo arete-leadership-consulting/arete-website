@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useRef, useState } from "react";
+import Link from "next/link";
 
 type Status = { tone: "idle" | "success" | "error"; message: string };
 
@@ -44,6 +45,7 @@ export function ContactForm({ defaultMessage = "" }: { defaultMessage?: string }
       <label>Organization<input type="text" name="organization" autoComplete="organization" maxLength={140} required /></label>
       <label>What would you like to work on?<textarea name="message" rows={4} maxLength={3000} defaultValue={defaultMessage} required /></label>
       <label className="form-trap" aria-hidden="true">Website<input type="text" name="website" tabIndex={-1} autoComplete="off" /></label>
+      <p className="form-privacy">By submitting this form, you acknowledge that ARETE will use the information provided to review and respond to your inquiry. Read our <Link href="/privacy">Privacy Notice</Link>.</p>
       <button type="submit" disabled={pending}>{pending ? "Sending…" : "Start a conversation"} <span>↗</span></button>
       <p id="form-status" className={`form-status form-status-${status.tone}`} aria-live="polite">{status.message}</p>
     </form>

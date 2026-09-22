@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ClosingCta, PageHero, PageShell } from "@/components/site-chrome";
 import { publishedInsights } from "@/lib/insights";
 
-export const metadata: Metadata = { title: "Insights", description: "Practical thinking on leadership, service, culture, business, technology, and the changing world of work." };
+export const metadata: Metadata = { title: "Insights", description: "Practical thinking on leadership, service, culture, business, technology, and the changing world of work.", alternates: { canonical: "/insights" } };
 const futureInsights = [
   ["Business", "Growth Creates Problems—and That Can Be a Good Thing", "The systems that helped an organization reach its current level may not be the systems capable of taking it to the next one."],
   ["Leadership", "You Don’t Build Culture With Posters", "Values become culture only when they influence decisions, behaviors, standards, conversations, and consequences."],

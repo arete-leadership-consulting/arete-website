@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ClosingCta, PageHero, PageShell } from "@/components/site-chrome";
 
-export const metadata: Metadata = { title: "Consulting", description: "Leadership, customer experience, strategy, and organizational improvement consulting from ARETE." };
+export const metadata: Metadata = { title: "Consulting", description: "Leadership, customer experience, strategy, and organizational improvement consulting from ARETE.", alternates: { canonical: "/consulting" } };
 
 const disciplines = [
   { number: "01", name: "Lead", title: "Leadership & Organizational Development", copy: "Strong organizations require leaders who create clarity, develop people, build trust, and move teams toward a common direction.", items: ["Leadership and emerging leader development", "Manager and supervisor development", "Team alignment and communication", "Culture, accountability, and ownership", "Change leadership", "Leadership workshops and retreats"] },

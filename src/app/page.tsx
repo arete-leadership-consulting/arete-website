@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact-form";
+
+export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 const services = [
   { number: "01", label: "Lead", title: "Leadership & organizational development", description: "Build leaders who communicate clearly, align teams, shape culture, and lead through change with confidence.", topics: ["Leadership development", "Team alignment", "Culture & communication"] },
@@ -98,7 +101,7 @@ export default function Home() {
         <ContactForm />
       </section>
 
-      <footer><div className="footer-brand"><Image className="footer-logo" src="/brand/arete-lead-logo-white.png" alt="ARETÉ Lead" width={572} height={286} unoptimized /></div><div><p>Leadership &amp; Business Consulting</p><p>Mindanao, Philippines</p></div><div className="footer-links"><Link href="/work-with-arete">Start a conversation ↗</Link><span>© 2026 ARETE</span></div></footer>
+      <footer><div className="footer-brand"><Image className="footer-logo" src="/brand/arete-lead-logo-white.png" alt="ARETÉ Lead" width={572} height={286} unoptimized /></div><div><p>Leadership &amp; Business Consulting</p><p>Mindanao, Philippines</p></div><div className="footer-links"><Link href="/work-with-arete">Start a conversation ↗</Link><Link href="/privacy">Privacy</Link><span>© 2026 ARETE</span></div></footer>
     </main>
   );
 }
