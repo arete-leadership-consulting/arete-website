@@ -527,9 +527,9 @@ footer { font-size:.75rem; }
 
 /* Interior pages extend the homepage's executive visual language. */
 .page-header { position:absolute; }
-.page-hero { min-height:700px; position:relative; overflow:hidden; display:grid; align-content:end; grid-template-columns:minmax(0,1fr) minmax(250px,32%); gap:40px 7vw; padding:190px max(clamp(24px,6vw,112px),calc((100vw - 1680px)/2)) 92px; color:white; background:var(--blue); }
+.page-hero { min-height:700px; position:relative; overflow:hidden; display:grid; align-content:end; grid-template-columns:minmax(0,1fr) minmax(250px,32%); gap:40px 7vw; padding:190px max(clamp(24px,6vw,112px),calc((100vw - 1680px)/2)) 92px; color:white; background:radial-gradient(circle at 82% 42%,#202422 0%,var(--ink-strong) 42%,#090a09 100%); }
 .page-hero::after { content:""; position:absolute; width:46vw; height:46vw; max-width:760px; max-height:760px; min-width:420px; min-height:420px; right:-10vw; top:100px; border:1px solid rgba(255,255,255,.14); border-radius:50%; }
-.page-hero::before { content:""; position:absolute; z-index:1; width:150px; height:10px; right:19vw; top:44%; transform:rotate(-48deg); background:var(--orange); }
+.page-hero::before { content:none; }
 .page-hero-grid { position:absolute; inset:0; opacity:.13; background-image:linear-gradient(rgba(255,255,255,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.1) 1px,transparent 1px); background-size:84px 84px; mask-image:linear-gradient(90deg,black,transparent 72%); }
 .page-hero-kicker,.page-hero h1,.page-hero>p { position:relative; z-index:2; }
 .page-hero-kicker { grid-column:1/-1; display:flex; align-items:center; gap:18px; }
