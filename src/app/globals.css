@@ -233,6 +233,34 @@ footer { padding:28px clamp(22px,7vw,132px); display:grid; grid-template-columns
 @media (max-width:620px){.article-hero h1{font-size:clamp(3rem,14vw,4.8rem)}.article-hero>div{flex-direction:column;gap:9px}.framework-card{padding:28px 18px;border-radius:0;margin-left:-24px;margin-right:-24px}.framework-ladder>div:first-child{flex-direction:column;align-items:stretch;min-height:0}.framework-ladder button,.framework-ladder button:nth-child(n){min-height:70px;height:auto}.recovery-ring{min-height:360px}.recovery-ring>p{width:92px;height:92px}.operating-orbit{min-height:340px}.operating-orbit>p{width:118px;height:118px;font-size:.8rem}.operating-orbit button{padding:10px;font-size:.72rem}.matrix-grid button{min-height:145px;padding:16px}.article-related a{min-height:200px}}
 @media (prefers-reduced-motion:reduce){.flow-steps button,.framework-ladder button,.recovery-ring button,.operating-orbit button,.matrix-grid button{transition:none!important;transform:none!important;opacity:1!important}}
 
+/* Consulting engagement formats */
+.engagement-grid { display:grid; grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr); grid-template-areas:"anchor diagnostic" "anchor workshop" "consulting custom"; gap:12px; border:0; counter-reset:engagement; }
+.engagement-grid article,.engagement-grid article:nth-child(odd),.engagement-grid article:nth-child(even) { position:relative; min-width:0; min-height:310px; padding:32px; border:1px solid var(--line); background:var(--paper); display:flex; flex-direction:column; justify-content:space-between; overflow:hidden; transition:background .35s ease,color .35s ease,border-color .35s ease,transform .35s ease; }
+.engagement-grid article:before { content:""; position:absolute; width:170px; height:170px; border:1px solid currentColor; border-radius:50%; right:-86px; top:-86px; opacity:.12; transition:transform .45s ease,opacity .35s ease; }
+.engagement-grid article:nth-child(1) { grid-area:anchor; min-height:632px; background:var(--ink-strong); color:white; }
+.engagement-grid article:nth-child(2) { grid-area:diagnostic; }
+.engagement-grid article:nth-child(3) { grid-area:workshop; background:var(--orange); border-color:var(--orange); color:var(--ink-strong); }
+.engagement-grid article:nth-child(4) { grid-area:consulting; }
+.engagement-grid article:nth-child(5) { grid-area:custom; min-height:310px; }
+.engagement-grid article:hover { background:var(--blue); border-color:var(--blue); color:white; transform:translateY(-4px); }
+.engagement-grid article:hover:before { transform:scale(1.2); opacity:.25; }
+.engagement-grid article:nth-child(3):hover { background:var(--ink-strong); border-color:var(--ink-strong); }
+.engagement-meta { display:flex; justify-content:space-between; align-items:flex-start; gap:20px; position:relative; z-index:1; }
+.engagement-meta span { width:46px; height:46px; display:grid; place-items:center; background:var(--orange); color:var(--ink-strong); font-size:.72rem; font-weight:800; letter-spacing:.1em; }
+.engagement-grid article:nth-child(3) .engagement-meta span { background:var(--ink-strong); color:white; }
+.engagement-meta em { font-style:normal; text-transform:uppercase; letter-spacing:.16em; font-size:.61rem; font-weight:750; opacity:.65; }
+.engagement-copy { position:relative; z-index:1; }
+.engagement-grid h3 { margin:0 0 22px; max-width:650px; font-size:clamp(2rem,3.5vw,4.1rem); line-height:.92; letter-spacing:-.06em; text-transform:none; }
+.engagement-grid article:nth-child(1) h3 { font-size:clamp(2.8rem,4.5vw,5rem); }
+.engagement-grid p { max-width:650px; margin:0; font-size:clamp(1rem,1.15vw,1.15rem); }
+.engagement-grid article:nth-child(1) p,.engagement-grid article:hover p { color:rgba(255,255,255,.72); }
+.engagement-grid article:nth-child(3) p { color:rgba(10,10,10,.72); }
+.engagement-grid article:nth-child(3):hover p { color:rgba(255,255,255,.72); }
+.engagement-arrow { position:absolute; right:28px; bottom:24px; font-size:1.3rem; color:var(--orange); opacity:0; transform:translate(-8px,8px); transition:.35s ease; }
+.engagement-grid article:hover .engagement-arrow { opacity:1; transform:none; }
+@media (max-width:980px){.engagement-grid{grid-template-columns:1fr 1fr;grid-template-areas:"anchor diagnostic" "anchor workshop" "consulting custom"}.engagement-grid article,.engagement-grid article:nth-child(n){min-height:340px;display:flex;align-items:stretch}.engagement-grid article:nth-child(1){min-height:500px}}
+@media (max-width:620px){.engagement-grid{grid-template-columns:1fr;grid-template-areas:"anchor" "diagnostic" "workshop" "consulting" "custom";gap:10px}.engagement-grid article,.engagement-grid article:nth-child(n){min-height:290px;padding:24px;align-items:stretch}.engagement-grid article:nth-child(1){min-height:430px}.engagement-grid h3{font-size:2rem;text-wrap:balance}.engagement-grid article:nth-child(1) h3{font-size:clamp(3rem,14vw,3.8rem)}}
+
 @media (prefers-reduced-motion:no-preference) { .hero-copy { animation:rise .8s ease-out both; } @keyframes rise { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } } }
 
 /* Bold executive direction: cinematic framing, decisive type, and human scale. */
