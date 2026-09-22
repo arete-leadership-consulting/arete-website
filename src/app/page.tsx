@@ -15,7 +15,7 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="ARETE home">
-          <Image className="brand-logo" src="/brand/arete-lead-logo.png" alt="" width={572} height={286} preload unoptimized />
+          <Image className="brand-logo" src="/brand/arete-lead-logo-white.png" alt="" width={572} height={286} preload unoptimized />
         </a>
         <nav aria-label="Primary navigation"><a href="#about">About</a><a href="#consulting">Consulting</a><a href="#speaking">Speaking</a><a href="#insights">Insights</a></nav>
         <a className="header-cta" href="#contact">Work with ARETE <span>↗</span></a>
@@ -92,7 +92,7 @@ export default function Home() {
         <form className="contact-form" aria-describedby="form-status"><label>Name<input type="text" name="name" autoComplete="name" /></label><label>Work email<input type="email" name="email" autoComplete="email" /></label><label>Organization<input type="text" name="organization" autoComplete="organization" /></label><label>What would you like to work on?<textarea name="message" rows={4} /></label><button type="button" disabled>Start a conversation <span>↗</span></button><p id="form-status">Inquiry delivery is being configured for the client-owned mailbox.</p></form>
       </section>
 
-      <footer><div className="footer-brand"><Image className="footer-logo" src="/brand/arete-lead-logo.png" alt="ARETÉ Lead" width={572} height={286} unoptimized /></div><div><p>Leadership &amp; Business Consulting</p><p>Mindanao, Philippines</p></div><div className="footer-links"><a href="#top">Back to top ↑</a><span>© 2026 ARETE</span></div></footer>
+      <footer><div className="footer-brand"><Image className="footer-logo" src="/brand/arete-lead-logo-white.png" alt="ARETÉ Lead" width={572} height={286} unoptimized /></div><div><p>Leadership &amp; Business Consulting</p><p>Mindanao, Philippines</p></div><div className="footer-links"><a href="#top">Back to top ↑</a><span>© 2026 ARETE</span></div></footer>
     </main>
   );
 }
