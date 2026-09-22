@@ -566,7 +566,9 @@ footer { font-size:.75rem; }
 .discipline-stack ul { margin:0; padding:0; list-style:none; }
 .discipline-stack li { padding:11px 0; border-bottom:1px solid var(--line); color:var(--ink-soft); font-size:.85rem; }
 .method { display:grid; grid-template-columns:minmax(320px,.8fr) minmax(0,1.2fr); gap:clamp(64px,8vw,130px); color:white; background:var(--blue); }
-.method-heading h2 { margin-top:44px; color:white; }
+.method-heading { align-self:center; }
+.method-heading h2 { max-width:680px; margin-top:54px; color:white; font-size:clamp(3.25rem,3.55vw,4.65rem); line-height:.96; letter-spacing:-.06em; }
+.method-heading h2 span { display:block; white-space:nowrap; }
 .method-list { border-top:1px solid rgba(255,255,255,.3); }
 .method-list article { display:grid; grid-template-columns:60px 180px 1fr; gap:22px; align-items:start; padding:24px 0; border-bottom:1px solid rgba(255,255,255,.2); }
 .method-list h3 { margin:0; font-size:1.2rem; color:white; }
@@ -654,6 +656,7 @@ footer { font-size:.75rem; }
   .page-hero::before { right:18%; top:38%; }
   .page-intro,.challenge,.speaking-intro { grid-template-columns:1fr; gap:34px; }
   .long-copy h2,.profile h2,.custom-program h2,.conversation h2,.insight-note h2,.closing-cta h2,.method h2 { font-size:clamp(2.4rem,11vw,3.6rem); }
+  .method-heading h2 { font-size:clamp(2.2rem,9.5vw,3rem); }
   .principle-grid article { padding:30px 0; }
   .principle-grid h3 { margin-top:28px; }
   .profile { grid-template-columns:1fr; padding-inline:0; }
