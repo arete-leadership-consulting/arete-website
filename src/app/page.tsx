@@ -53,7 +53,7 @@ export default function Home() {
 
       <section className="founder section">
         <div className="founder-panel">
-          <Image className="founder-image" src="/brand/luis-yu-office-portrait.png" alt="Luis Yu in his office" fill sizes="(max-width: 720px) 100vw, 50vw" />
+          <Image className="founder-image" src="/brand/luis-yu-portrait.png" alt="Portrait of Luis Yu" fill sizes="(max-width: 720px) 100vw, 50vw" />
           <div className="founder-image-shade" aria-hidden="true" />
           <p className="eyebrow light">Founder &amp; principal consultant</p>
           <p className="founder-caption">Experience across business, creative, organizational, and community leadership.</p>
