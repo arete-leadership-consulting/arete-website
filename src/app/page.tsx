@@ -24,7 +24,7 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="hero-grid" aria-hidden="true" />
         <div className="hero-stage">
-          <Image className="hero-image" src="/brand/luis-yu-hero.png" alt="Luis Yu speaking onstage" fill sizes="100vw" priority />
+          <Image className="hero-image" src="/brand/luis-yu-hero.png" alt="Luis Yu speaking onstage" fill sizes="100vw" preload />
           <div className="hero-copy">
             <h1>
               <span className="hero-line"><strong>Lead</strong><small> better.</small></span>
@@ -56,7 +56,7 @@ export default function Home() {
           <p className="eyebrow light">Founder &amp; principal consultant</p>
           <p className="founder-caption">Experience across business, creative, organizational, and community leadership.</p>
         </div>
-        <div className="founder-copy"><p className="section-number">03</p><h2>Meet<br /><em>Luis Yu.</em></h2><p className="founder-lead">Entrepreneur, business leader, creative strategist, organizational leader, consultant, and speaker.</p><p>His work spans frontline customer service, management, entrepreneurship, executive leadership, creative leadership, organizational development, and community building.</p><a className="text-link" href="#contact">Start a conversation <span>↗</span></a></div>
+        <div className="founder-copy"><p className="section-number">03</p><h2>Meet<br /><em>Luis Yu.</em></h2><p className="founder-lead">Entrepreneur, business leader, creative strategist, consultant, and speaker.</p><p>His experience spans frontline service, management, entrepreneurship, executive leadership, organizational development, and community building.</p><a className="text-link" href="#contact">Start a conversation <span>↗</span></a></div>
       </section>
 
       <section className="numbers section" aria-label="Experience by the numbers">
@@ -89,7 +89,7 @@ export default function Home() {
 
       <section className="contact section" id="contact">
         <div className="contact-copy"><p className="eyebrow light">Start a conversation</p><p className="section-number">08</p><h2>What are you trying<br />to <em>build?</em></h2><p>Whether you’re developing leaders, strengthening your team, improving customer experience, or figuring out your organization’s next move—let’s talk.</p></div>
-        <form className="contact-form" aria-describedby="form-status"><label>Name<input type="text" name="name" autoComplete="name" /></label><label>Work email<input type="email" name="email" autoComplete="email" /></label><label>Organization<input type="text" name="organization" autoComplete="organization" /></label><label>What would you like to work on?<textarea name="message" rows={4} /></label><button type="button" disabled>Start a conversation <span>↗</span></button><p id="form-status">Inquiry delivery is being configured for the client-owned mailbox.</p></form>
+        <form className="contact-form" aria-describedby="form-status"><fieldset disabled><label>Name<input type="text" name="name" autoComplete="name" /></label><label>Work email<input type="email" name="email" autoComplete="email" /></label><label>Organization<input type="text" name="organization" autoComplete="organization" /></label><label>What would you like to work on?<textarea name="message" rows={4} /></label><button type="button">Start a conversation <span>↗</span></button></fieldset><p id="form-status">Online inquiries are not open yet. ARETE’s client-owned email will be connected before launch.</p></form>
       </section>
 
       <footer><div className="footer-brand"><Image className="footer-logo" src="/brand/arete-lead-logo-white.png" alt="ARETÉ Lead" width={572} height={286} unoptimized /></div><div><p>Leadership &amp; Business Consulting</p><p>Mindanao, Philippines</p></div><div className="footer-links"><a href="#top">Back to top ↑</a><span>© 2026 ARETE</span></div></footer>
