@@ -24,11 +24,11 @@ export default async function AdminLayout({ children }: { children: ReactNode })
     <div className="admin-shell">
       <aside className="admin-sidebar">
         <Link href="/admin" className="admin-logo-link" aria-label="ARETÉ Business OS overview"><AreteLogo className="admin-logo" /></Link>
+        <form action={signOut} className="admin-logout"><button type="submit">Sign out</button></form>
         <AdminNav />
         <div className="admin-user">
           <p>{profile.full_name || data.user.email}</p>
           <span>{profile.role.replaceAll("_", " ")}</span>
-          <form action={signOut}><button type="submit">Sign out</button></form>
         </div>
       </aside>
       <main className="admin-main">{children}</main>
