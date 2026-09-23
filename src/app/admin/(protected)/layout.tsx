@@ -3,21 +3,8 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { signOut } from "../actions";
-
-const navItems = [
-  ["Overview", "/admin"],
-  ["CRM", "/admin/crm"],
-  ["Pipeline", "/admin/pipeline"],
-  ["Inquiries", "/admin/inquiries"],
-  ["Clients", "/admin/clients"],
-  ["Proposals", "/admin/proposals"],
-  ["Contracts", "/admin/contracts"],
-  ["Services", "/admin/services"],
-  ["Analytics", "/admin/analytics"],
-  ["SEO", "/admin/seo"],
-  ["Records", "/admin/records"],
-  ["Settings", "/admin/settings"],
-];
+import { AdminNav } from "@/components/admin-nav";
+import { AreteLogo } from "@/components/arete-logo";
 
 export default async function AdminLayout({ children }: { children: ReactNode }) {
   const supabase = await createClient();
@@ -36,14 +23,8 @@ export default async function AdminLayout({ children }: { children: ReactNode })
   return (
     <div className="admin-shell">
       <aside className="admin-sidebar">
-        <Link href="/admin" className="admin-wordmark">ARETÉ <span>OS</span></Link>
-        <nav aria-label="Admin navigation">
-          {navItems.map(([label, href], index) => (
-            <Link href={href} key={href}>
-              <span>{String(index + 1).padStart(2, "0")}</span>{label}
-            </Link>
-          ))}
-        </nav>
+        <Link href="/admin" className="admin-logo-link" aria-label="ARETÉ Business OS overview"><AreteLogo className="admin-logo" /></Link>
+        <AdminNav />
         <div className="admin-user">
           <p>{profile.full_name || data.user.email}</p>
           <span>{profile.role.replaceAll("_", " ")}</span>

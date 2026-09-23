@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { requestPasswordReset } from "./actions";
+import { AreteLogo } from "@/components/arete-logo";
 
 export const metadata: Metadata = {
   title: "Reset Admin Password",
@@ -17,7 +18,7 @@ export default async function ForgotPasswordPage({
   return (
     <main className="admin-login">
       <section className="admin-login-panel">
-        <Link href="/" className="admin-wordmark">ARETÉ <span>LEAD</span></Link>
+        <Link href="/" className="admin-wordmark" aria-label="Return to ARETE"><AreteLogo className="admin-auth-logo" /></Link>
         <div className="admin-login-copy">
           <p className="admin-kicker">SECURE ACCOUNT RECOVERY</p>
           <h1>Return to<br />the work.</h1>

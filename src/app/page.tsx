@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { AreteLogo } from "@/components/arete-logo";
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact-form";
 
@@ -24,7 +25,7 @@ export default function Home() {
     <main>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="ARETE home">
-          <Image className="brand-logo" src="/brand/arete-lead-logo-white.png" alt="" width={572} height={286} preload unoptimized />
+          <AreteLogo className="brand-logo" />
         </a>
         <nav aria-label="Primary navigation"><Link href="/about">About</Link><Link href="/consulting">Consulting</Link><Link href="/speaking">Speaking</Link><Link href="/insights">Insights</Link></nav>
         <Link className="header-cta" href="/work-with-arete">Work with ARETE <span>↗</span></Link>
@@ -101,7 +102,7 @@ export default function Home() {
         <ContactForm />
       </section>
 
-      <footer><div className="footer-brand"><Image className="footer-logo" src="/brand/arete-lead-logo-white.png" alt="ARETÉ Lead" width={572} height={286} unoptimized /></div><div><p>Leadership &amp; Business Consulting</p><p>Mindanao, Philippines</p></div><div className="footer-links"><Link href="/work-with-arete">Start a conversation ↗</Link><Link href="/privacy">Privacy</Link><span>© 2026 ARETE</span></div></footer>
+      <footer><div className="footer-brand"><AreteLogo className="footer-logo" /></div><div><p>Leadership &amp; Business Consulting</p><p>Mindanao, Philippines</p></div><div className="footer-links"><Link href="/work-with-arete">Start a conversation ↗</Link><Link href="/privacy">Privacy</Link><span>© 2026 ARETE</span></div></footer>
     </main>
   );
 }

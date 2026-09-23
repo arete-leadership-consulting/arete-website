@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RecoveryForm } from "./recovery-form";
+import { AreteLogo } from "@/components/arete-logo";
 
 export const metadata: Metadata = {
   title: "Choose a New Password",
@@ -24,7 +25,7 @@ export default async function UpdatePasswordPage({
   return (
     <main className="admin-login">
       <section className="admin-login-panel">
-        <Link href="/" className="admin-wordmark">ARETÉ <span>LEAD</span></Link>
+        <Link href="/" className="admin-wordmark" aria-label="Return to ARETE"><AreteLogo className="admin-auth-logo" /></Link>
         <div className="admin-login-copy">
           <p className="admin-kicker">PROTECTED ACCESS</p>
           <h1>Choose a new<br />password.</h1>

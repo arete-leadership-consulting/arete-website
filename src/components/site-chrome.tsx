@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { AreteLogo } from "@/components/arete-logo";
 
 const navigation = [
   ["About", "/about"],
@@ -13,7 +13,7 @@ export function SiteHeader() {
   return (
     <header className="site-header page-header">
       <Link className="brand" href="/" aria-label="ARETE home">
-        <Image className="brand-logo" src="/brand/arete-lead-logo-white.png" alt="" width={572} height={286} unoptimized />
+        <AreteLogo className="brand-logo" />
       </Link>
       <nav aria-label="Primary navigation">
         {navigation.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}
@@ -26,7 +26,7 @@ export function SiteHeader() {
 export function SiteFooter() {
   return (
     <footer>
-      <div className="footer-brand"><Image className="footer-logo" src="/brand/arete-lead-logo-white.png" alt="ARETÉ Lead" width={572} height={286} unoptimized /></div>
+      <div className="footer-brand"><AreteLogo className="footer-logo" /></div>
       <div><p>Leadership &amp; Business Consulting</p><p>Mindanao, Philippines</p></div>
       <div className="footer-links"><Link href="/work-with-arete">Start a conversation ↗</Link><Link href="/privacy">Privacy</Link><span>© 2026 ARETE</span></div>
     </footer>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { signIn } from "./actions";
+import { AreteLogo } from "@/components/arete-logo";
 
 export const metadata: Metadata = {
   title: "Admin Sign In",
@@ -26,7 +27,7 @@ export default async function AdminLoginPage({
     <main className="admin-login">
       <section className="admin-login-panel">
         <Link href="/" className="admin-wordmark" aria-label="Return to ARETE">
-          ARETÉ <span>LEAD</span>
+          <AreteLogo className="admin-auth-logo" />
         </Link>
         <div className="admin-login-copy">
           <p className="admin-kicker">PRIVATE BUSINESS OS</p>
