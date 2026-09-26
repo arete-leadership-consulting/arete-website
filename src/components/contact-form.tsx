@@ -42,6 +42,7 @@ export function ContactForm({ defaultMessage = "" }: { defaultMessage?: string }
     <form ref={formRef} className="contact-form" aria-describedby="form-status" onSubmit={handleSubmit}>
       <label>Name<input type="text" name="name" autoComplete="name" maxLength={100} required /></label>
       <label>Work email<input type="email" name="email" autoComplete="email" maxLength={254} required /></label>
+      <label>Contact number<input type="tel" name="phone" autoComplete="tel" inputMode="tel" minLength={7} maxLength={30} pattern="[0-9+(). -]{7,30}" title="Enter a valid contact number using digits, spaces, parentheses, plus, periods, or hyphens." required /></label>
       <label>Organization<input type="text" name="organization" autoComplete="organization" maxLength={140} required /></label>
       <label>What would you like to work on?<textarea name="message" rows={4} maxLength={3000} defaultValue={defaultMessage} required /></label>
       <label className="form-trap" aria-hidden="true">Website<input type="text" name="website" tabIndex={-1} autoComplete="off" /></label>
