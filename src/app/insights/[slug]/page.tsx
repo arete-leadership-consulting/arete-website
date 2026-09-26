@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { FutureFrameworks, LeadershipFrameworks, ServiceFrameworks } from "@/components/insight-frameworks";
@@ -6,7 +7,7 @@ import { PageShell } from "@/components/site-chrome";
 import { getInsight, publishedInsights } from "@/lib/insights";
 
 export function generateStaticParams() { return publishedInsights.map(({ slug }) => ({ slug })); }
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> { const { slug } = await params; const insight = getInsight(slug); return insight ? { title: insight.title, description: insight.standfirst, alternates: { canonical: `/insights/${slug}` }, openGraph: { title: insight.title, description: insight.standfirst, type: "article", url: `/insights/${slug}`, siteName: "ARETE Leadership & Business Consulting", images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "ARETE Leadership & Business Consulting" }] } } : {}; }
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> { const { slug } = await params; const insight = getInsight(slug); return insight ? { title: insight.title, description: insight.standfirst, alternates: { canonical: `/insights/${slug}` }, openGraph: { title: insight.title, description: insight.standfirst, type: "article", url: `/insights/${slug}`, siteName: "ARETE Leadership & Business Consulting", images: [{ url: insight.image.src, alt: insight.image.alt }] } } : {}; }
 
 const frameworkBySlug = { "clarity-in-leadership": LeadershipFrameworks, "building-service-culture": ServiceFrameworks, "human-leadership-ai": FutureFrameworks } as const;
 
@@ -14,7 +15,7 @@ export default async function InsightArticle({ params }: { params: Promise<{ slu
   const { slug } = await params; const insight = getInsight(slug); if (!insight) notFound(); const Frameworks = frameworkBySlug[slug as keyof typeof frameworkBySlug];
   const schema = { "@context": "https://schema.org", "@type": "Article", headline: insight.title, description: insight.standfirst, author: { "@type": "Person", name: "Luis Yu" }, publisher: { "@type": "Organization", name: "ARETE" } };
   return <PageShell><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-    <article className="insight-article"><header className="article-hero"><p className="eyebrow">ARETE Insight · {insight.category}</p><h1>{insight.title}</h1><p>{insight.standfirst}</p><div><span>By Luis Yu</span><span>8 minute read</span></div></header>
+    <article className="insight-article"><header className="article-hero"><Image className="article-hero-image" src={insight.image.src} alt={insight.image.alt} fill priority sizes="100vw" /><p className="eyebrow">ARETE Insight · {insight.category}</p><h1>{insight.title}</h1><p>{insight.standfirst}</p><div><span>By Luis Yu</span><span>8 minute read</span></div></header>
       <div className="article-layout"><div className="article-body">{insight.sections.map((section, index) => <section key={section.heading ?? index}>{section.heading && <h2>{section.heading}</h2>}{section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}{section.quote && <blockquote>{section.quote}</blockquote>}</section>)}</div></div>
       {Frameworks && <Frameworks />}
       <section className="article-closing"><p className="eyebrow light">Closing question</p><blockquote>{insight.closingQuestion}</blockquote><div><span>ARETE Insight</span><p>{insight.areteInsight}</p></div></section>
