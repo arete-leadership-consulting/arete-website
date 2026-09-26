@@ -3,6 +3,7 @@ import Link from "next/link";
 import { AreteLogo } from "@/components/arete-logo";
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact-form";
+import { TopicOverviews } from "@/components/topic-overviews";
 
 export const metadata: Metadata = { alternates: { canonical: "/" } };
 
@@ -13,7 +14,6 @@ const services = [
 ];
 
 const statistics = [["20+", "Years of leadership experience"], ["500+", "People led"], ["60,000+", "Clients served"], ["2.4M+", "Creative assets delivered"]];
-const talks = ["Leadership Beyond the Title", "The Culture of Excellence", "Customer Service is Everyone’s Business", "Leading Through Change", "Human Leadership in the Age of AI", "From Vision to Execution"];
 const insights = [
   { category: "Leadership", title: "Why clarity is one of a leader’s most generous acts", slug: "clarity-in-leadership", image: "/brand/insights/leadership-clarity.png", alt: "Business leader reviewing a strategic plan" },
   { category: "Customer experience", title: "Service culture is built long before the customer arrives", slug: "building-service-culture", image: "/brand/insights/service-culture.png", alt: "Service team preparing together before opening" },
@@ -82,7 +82,7 @@ export default function Home() {
 
       <section className="speaking section" id="speaking">
         <div className="section-heading"><div><p className="eyebrow light">Speaking &amp; training</p><p className="section-number">05</p></div><h2>Ideas that move people.<br /><em>Tools that move work.</em></h2><p>Storytelling grounded in business experience, organizational leadership, and practical frameworks.</p></div>
-        <ol className="talk-list">{talks.map((talk, index) => <li key={talk}><span>0{index + 1}</span><p>{talk}</p><b aria-hidden="true">↗</b></li>)}</ol>
+        <TopicOverviews />
         <Link className="button button-primary" href="/speaking">Explore speaking topics <span>↗</span></Link>
       </section>
 
