@@ -650,9 +650,13 @@ footer { font-size:.75rem; }
 .conversation .contact-form input,.conversation .contact-form textarea { color:var(--ink-strong); }
 .conversation #form-status { color:rgba(16,17,16,.68); }
 .conversation .form-privacy { color:rgba(16,17,16,.7); }
-.contact-options { color:white; background:var(--blue); }
-.contact-options>div { display:flex; flex-wrap:wrap; gap:12px; margin-top:42px; }
-.contact-options span { padding:14px 18px; border:1px solid rgba(255,255,255,.25); border-radius:999px; font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; }
+.contact-options { --section-x:max(clamp(24px,6vw,112px),calc((100vw - 1680px)/2)); color:white; background:var(--blue); }
+.interest-marquee { position:relative; width:calc(100% + (var(--section-x) * 2)); margin:42px calc(var(--section-x) * -1) 0; overflow:hidden; mask-image:linear-gradient(90deg,transparent 0,#000 var(--section-x),#000 calc(100% - var(--section-x)),transparent 100%); }
+.interest-marquee-track { display:flex; width:max-content; animation:interest-marquee 34s linear infinite; }
+.interest-marquee ul { display:flex; flex:none; gap:14px; margin:0; padding:0 14px 0 0; list-style:none; }
+.interest-marquee li { padding:14px 20px; border:1px solid rgba(255,255,255,.25); border-radius:999px; color:rgba(255,255,255,.9); font-size:.72rem; font-weight:650; text-transform:uppercase; letter-spacing:.1em; white-space:nowrap; }
+.interest-marquee:hover .interest-marquee-track { animation-play-state:paused; }
+@keyframes interest-marquee { to { transform:translateX(-50%); } }
 .closing-cta { color:white; background:var(--orange); }
 .closing-cta h2 { max-width:1000px; margin-top:38px; color:var(--ink-strong); }
 .closing-cta>p { max-width:700px; color:rgba(16,17,16,.72); }
@@ -817,4 +821,15 @@ footer { font-size:.75rem; }
   .topic-modal-details { grid-template-columns:1fr; gap:26px; margin:32px 0; }
   .topic-modal-actions { align-items:stretch; flex-direction:column; }
   .topic-modal-more { align-self:flex-start; }
+  .interest-marquee { width:calc(100% + 40px); margin-inline:-20px; mask-image:linear-gradient(90deg,transparent,#000 20px,#000 calc(100% - 20px),transparent); }
 }
+
+@media (prefers-reduced-motion:reduce) {
+  .interest-marquee { overflow:visible; mask-image:none; }
+  .interest-marquee-track { width:auto; animation:none; }
+  .interest-marquee ul:first-child { flex-wrap:wrap; }
+  .interest-marquee ul[aria-hidden="true"] { display:none; }
+}
+
+/* Speaking topic names stay calm and readable beside the animated overview affordance. */
+.talk-list .talk-title { font-family:Arial,Helvetica,sans-serif; font-style:normal; font-weight:400; letter-spacing:-.035em; }
